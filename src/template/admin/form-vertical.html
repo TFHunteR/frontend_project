@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Mirrored from mentoring-html.dreamguystech.com/template-2/admin/form-vertical.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 31 Jul 2022 03:59:58 GMT -->
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+  <title>Mentoring - Vertical Form</title>
+
+  <link rel="shortcut icon" href="/assets/img/favicon.png" type="image/x-icon">
+
+  <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+
+  <link rel="stylesheet" href="assets/plugins/fontawesome/css/fontawesome.min.css">
+  <link rel="stylesheet" href="assets/plugins/fontawesome/css/all.min.css">
+
+  <link rel="stylesheet" href="assets/css/feathericon.min.css">
+
+  <link rel="stylesheet" href="assets/css/select2.min.css">
+
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+
+  <div className="main-wrapper">
+
+    <div className="header">
+
+      <div className="header-left">
+        <a href="index.html" className="logo">
+          <img src="/assets/img/logo.png" alt="Logo">
+        </a>
+        <a href="index.html" className="logo logo-small">
+          <img src="/assets/img/logo-small.png" alt="Logo" width="30" height="30">
+        </a>
+      </div>
+
+      <a href="javascript:void(0);" id="toggle_btn">
+        <i className="fe fe-text-align-left"></i>
+      </a>
+      <div className="top-nav-search">
+        <form>
+          <input type="text" className="form-control" placeholder="Search here">
+          <button className="btn" type="submit"><i className="fa fa-search"></i></button>
+        </form>
+      </div>
+
+      <a className="mobile_btn" id="mobile_btn">
+        <i className="fa fa-bars"></i>
+      </a>
+
+
+      <ul className="nav user-menu">
+
+        <li className="nav-item dropdown noti-dropdown">
+          <a href="#" className="dropdown-toggle nav-link" data-bs-toggle="dropdown">
+            <i className="fe fe-bell"></i> <span className="badge badge-pill">3</span>
+          </a>
+          <div className="dropdown-menu notifications">
+            <div className="topnav-dropdown-header">
+              <span className="notification-title">Notifications</span>
+              <a href="javascript:void(0)" className="clear-noti"> Clear All </a>
+            </div>
+            <div className="noti-content">
+              <ul className="notification-list">
+                <li className="notification-message">
+                  <a href="#">
+                    <div className="media d-flex">
+                      <span className="avatar avatar-sm flex-shrink-0">
+                        <img className="avatar-img rounded-circle" alt="User Image" src="/assets/img/user/user.jpg">
+                      </span>
+                      <div className="media-body flex-grow-1">
+                        <p className="noti-details"><span className="noti-title">Jonathan Doe</span> Schedule <span
+                            className="noti-title">his appointment</span></p>
+                        <p className="noti-time"><span className="notification-time">4 mins ago</span></p>
+                      </div>
+                    </div>
+                  </a>
+                </li>
+                <li className="notification-message">
+                  <a href="#">
+                    <div className="media d-flex">
+                      <span className="avatar avatar-sm flex-shrink-0">
+                        <img className="avatar-img rounded-circle" alt="User Image" src="/assets/img/user/user1.jpg">
+                      </span>
+                      <div className="media-body flex-grow-1">
+                        <p className="noti-details"><span className="noti-title">Julie Pennington</span> has booked her
+                          appointment to <span className="noti-title">Ruby Perrin</span></p>
+                        <p className="noti-time"><span className="notification-time">6 mins ago</span></p>
+                      </div>
+                    </div>
+                  </a>
+                </li>
+                <li className="notification-message">
+                  <a href="#">
+                    <div className="media d-flex">
+                      <span className="avatar avatar-sm flex-shrink-0">
+                        <img className="avatar-img rounded-circle" alt="User Image" src="/assets/img/user/user2.jpg">
+                      </span>
+                      <div className="media-body flex-grow-1">
+                        <p className="noti-details"><span className="noti-title">Tyrone Roberts</span> sent a amount of
+                          $210 for his <span className="noti-title">appointment</span></p>
+                        <p className="noti-time"><span className="notification-time">8 mins ago</span></p>
+                      </div>
+                    </div>
+                  </a>
+                </li>
+                <li className="notification-message">
+                  <a href="#">
+                    <div className="media d-flex">
+                      <span className="avatar avatar-sm flex-shrink-0">
+                        <img className="avatar-img rounded-circle" alt="User Image" src="/assets/img/user/user4.jpg">
+                      </span>
+                      <div className="media-body flex-grow-1">
+                        <p className="noti-details"><span className="noti-title">Patricia Manzi</span> send a message
+                          <span className="noti-title"> to his Mentee</span>
+                        </p>
+                        <p className="noti-time"><span className="notification-time">12 mins ago</span></p>
+                      </div>
+                    </div>
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div className="topnav-dropdown-footer">
+              <a href="#">View all Notifications</a>
+            </div>
+          </div>
+        </li>
+
+
+        <li className="nav-item dropdown has-arrow">
+          <a href="#" className="dropdown-toggle nav-link" data-bs-toggle="dropdown">
+            <span className="user-img"><img className="rounded-circle" src="/assets/img/profiles/avatar-12.jpg"
+                width="31" alt="Ryan Taylor"></span>
+          </a>
+          <div className="dropdown-menu">
+            <div className="user-header">
+              <div className="avatar avatar-sm">
+                <img src="/assets/img/profiles/avatar-12.jpg" alt="User Image" className="avatar-img rounded-circle">
+              </div>
+              <div className="user-text">
+                <h6>Allen Davis</h6>
+                <p className="text-muted mb-0">Administrator</p>
+              </div>
+            </div>
+            <a className="dropdown-item" href="profile.html">My Profile</a>
+            <a className="dropdown-item" href="settings.html">Settings</a>
+            <a className="dropdown-item" href="login.html">Logout</a>
+          </div>
+        </li>
+
+      </ul>
+
+    </div>
+
+
+    <div className="sidebar" id="sidebar">
+      <div className="sidebar-inner slimscroll">
+        <div id="sidebar-menu" className="sidebar-menu">
+          <ul>
+            <li className="menu-title">
+              <span>Main</span>
+            </li>
+            <li>
+              <a href="index.html"><i data-feather="home"></i> <span>Dashboard</span></a>
+            </li>
+            <li>
+              <a href="mentor.html"><i data-feather="user"></i> <span>Mentor</span></a>
+            </li>
+            <li>
+              <a href="mentee.html"><i data-feather="users"></i> <span>Mentee</span></a>
+            </li>
+            <li>
+              <a href="booking-list.html"><i data-feather="file-text"></i> <span>Booking List</span></a>
+            </li>
+            <li>
+              <a href="categories.html"><i data-feather="package"></i> <span>Categories</span></a>
+            </li>
+            <li>
+              <a href="transactions-list.html"><i data-feather="credit-card"></i> <span>Transactions</span></a>
+            </li>
+            <li>
+              <a href="settings.html"><i data-feather="settings"></i> <span>Settings</span></a>
+            </li>
+            <li className="submenu">
+              <a href="#"><i data-feather="clipboard"></i><span> Reports</span> <span className="menu-arrow"></span></a>
+              <ul style="display: none;">
+                <li><a href="invoices.html">Invoices List</a></li>
+                <li><a href="invoice-grid.html">Invoices Grid</a></li>
+                <li><a href="add-invoice.html">Add Invoices</a></li>
+                <li><a href="edit-invoice.html">Edit Invoices</a></li>
+                <li><a href="view-invoice.html">Invoice Details</a></li>
+                <li><a href="invoices-settings.html">invoice settings</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="invoice-items.html"><i data-feather="star"></i></i><span>Items</span></a>
+            </li>
+            <li className="menu-title">
+              <span>Pages</span>
+            </li>
+            <li>
+              <a href="profile.html"><i data-feather="user-plus"></i> <span>My Profile</span></a>
+            </li>
+            <li className="submenu">
+              <a href="#"><i data-feather="book-open"></i> <span>Blog</span> <span className="menu-arrow"></span></a>
+              <ul>
+                <li><a href="blog.html"> Blog </a></li>
+                <li><a href="blog-details.html"> Blog Details </a></li>
+                <li><a href="add-blog.html"> Add Blog </a></li>
+                <li><a href="edit-blog.html"> Edit Blog </a></li>
+              </ul>
+            </li>
+            <li className="submenu">
+              <a href="#"><i data-feather="lock"></i> <span> Authentication </span> <span
+                  className="menu-arrow"></span></a>
+              <ul>
+                <li><a href="login.html"> Login </a></li>
+                <li><a href="register.html"> Register </a></li>
+                <li><a href="forgot-password.html"> Forgot Password </a></li>
+                <li><a href="lock-screen.html"> Lock Screen </a></li>
+              </ul>
+            </li>
+            <li className="submenu">
+              <a href="#"><i data-feather="alert-octagon"></i> <span> Error Pages </span> <span
+                  className="menu-arrow"></span></a>
+              <ul>
+                <li><a href="error-404.html">404 Error </a></li>
+                <li><a href="error-500.html">500 Error </a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="blank-page.html"><i data-feather="file"></i> <span>Blank Page</span></a>
+            </li>
+            <li className="menu-title">
+              <span>UI Interface</span>
+            </li>
+            <li>
+              <a href="components.html"><i data-feather="layers"></i> <span>Components</span></a>
+            </li>
+            <li className="submenu active">
+              <a href="#"><i data-feather="columns"></i> <span> Forms </span> <span className="menu-arrow"></span></a>
+              <ul>
+                <li><a href="form-basic-inputs.html">Basic Inputs </a></li>
+                <li><a href="form-input-groups.html">Input Groups </a></li>
+                <li><a href="form-horizontal.html">Horizontal Form </a></li>
+                <li><a className="active" href="form-vertical.html"> Vertical Form </a></li>
+                <li><a href="form-mask.html"> Form Mask </a></li>
+                <li><a href="form-validation.html"> Form Validation </a></li>
+              </ul>
+            </li>
+            <li className="submenu">
+              <a href="#"><i data-feather="layout"></i> <span> Tables </span> <span className="menu-arrow"></span></a>
+              <ul>
+                <li><a href="tables-basic.html">Basic Tables </a></li>
+                <li><a href="data-tables.html">Data Table </a></li>
+              </ul>
+            </li>
+            <li className="submenu">
+              <a href="javascript:void(0);"><span>Multi Level</span> <span className="menu-arrow"></span></a>
+              <ul>
+                <li className="submenu">
+                  <a href="javascript:void(0);"> <span>Level 1</span> <span className="menu-arrow"></span></a>
+                  <ul>
+                    <li><a href="javascript:void(0);"><span>Level 2</span></a></li>
+                    <li className="submenu">
+                      <a href="javascript:void(0);"> <span> Level 2</span> <span className="menu-arrow"></span></a>
+                      <ul>
+                        <li><a href="javascript:void(0);">Level 3</a></li>
+                        <li><a href="javascript:void(0);">Level 3</a></li>
+                      </ul>
+                    </li>
+                    <li><a href="javascript:void(0);"> <span>Level 2</span></a></li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="javascript:void(0);"> <span>Level 1</span></a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+
+    <div className="page-wrapper">
+      <div className="content container-fluid">
+
+        <div className="page-header">
+          <div className="row">
+            <div className="col">
+              <h3 className="page-title">Vertical Form</h3>
+              <ul className="breadcrumb">
+                <li className="breadcrumb-item"><a href="index.html">Dashboard</a></li>
+                <li className="breadcrumb-item active">Vertical Form</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div className="row">
+          <div className="col-md-6">
+            <div className="card">
+              <div className="card-header">
+                <h4 className="card-title">Basic Form</h4>
+              </div>
+              <div className="card-body">
+                <form action="#">
+                  <div className="form-group">
+                    <label>First Name</label>
+                    <input type="text" className="form-control">
+                  </div>
+                  <div className="form-group">
+                    <label>Last Name</label>
+                    <input type="text" className="form-control">
+                  </div>
+                  <div className="form-group">
+                    <label>Email Address</label>
+                    <input type="email" className="form-control">
+                  </div>
+                  <div className="form-group">
+                    <label>Username</label>
+                    <input type="text" className="form-control">
+                  </div>
+                  <div className="form-group">
+                    <label>Password</label>
+                    <input type="password" className="form-control">
+                  </div>
+                  <div className="form-group">
+                    <label>Repeat Password</label>
+                    <input type="password" className="form-control">
+                  </div>
+                  <div className="text-end">
+                    <button type="submit" className="btn btn-primary">Submit</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+          <div className="col-md-6">
+            <div className="card">
+              <div className="card-header">
+                <h4 className="card-title">Address Form</h4>
+              </div>
+              <div className="card-body">
+                <form action="#">
+                  <div className="form-group">
+                    <label>Address Line 1</label>
+                    <input type="text" className="form-control">
+                  </div>
+                  <div className="form-group">
+                    <label>Address Line 2</label>
+                    <input type="text" className="form-control">
+                  </div>
+                  <div className="form-group">
+                    <label>City</label>
+                    <input type="text" className="form-control">
+                  </div>
+                  <div className="form-group">
+                    <label>State</label>
+                    <input type="text" className="form-control">
+                  </div>
+                  <div className="form-group">
+                    <label>Country</label>
+                    <input type="text" className="form-control">
+                  </div>
+                  <div className="form-group">
+                    <label>Postal Code</label>
+                    <input type="text" className="form-control">
+                  </div>
+                  <div className="text-end">
+                    <button type="submit" className="btn btn-primary">Submit</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="row">
+          <div className="col-md-12">
+            <div className="card">
+              <div className="card-header">
+                <h4 className="card-title">Two Column Vertical Form</h4>
+              </div>
+              <div className="card-body">
+                <form action="#">
+                  <h4 className="card-title">Personal Information</h4>
+                  <div className="row">
+                    <div className="col-md-6">
+                      <div className="form-group">
+                        <label>First Name</label>
+                        <input type="text" className="form-control">
+                      </div>
+                      <div className="form-group">
+                        <label>Last Name</label>
+                        <input type="text" className="form-control">
+                      </div>
+                      <div className="form-group">
+                        <label>Blood Group</label>
+                        <select className="select">
+                          <option>Select</option>
+                          <option value="1">A+</option>
+                          <option value="2">O+</option>
+                          <option value="3">B+</option>
+                          <option value="4">AB+</option>
+                        </select>
+                      </div>
+                      <div className="form-group">
+                        <label className="d-block">Gender:</label>
+                        <div className="form-check form-check-inline">
+                          <input className="form-check-input" type="radio" name="gender" id="gender_male"
+                            value="option1">
+                          <label className="form-check-label" htmlFor="gender_male">Male</label>
+                        </div>
+                        <div className="form-check form-check-inline">
+                          <input className="form-check-input" type="radio" name="gender" id="gender_female"
+                            value="option2">
+                          <label className="form-check-label" htmlFor="gender_female">Female</label>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="col-md-6">
+                      <div className="form-group">
+                        <label>Username</label>
+                        <input type="text" className="form-control">
+                      </div>
+                      <div className="form-group">
+                        <label>Email</label>
+                        <input type="text" className="form-control">
+                      </div>
+                      <div className="form-group">
+                        <label>Password</label>
+                        <input type="text" className="form-control">
+                      </div>
+                      <div className="form-group">
+                        <label>Repeat Password</label>
+                        <input type="text" className="form-control">
+                      </div>
+                    </div>
+                  </div>
+                  <h4 className="card-title">Postal Address</h4>
+                  <div className="row">
+                    <div className="col-md-6">
+                      <div className="form-group">
+                        <label>Address Line 1</label>
+                        <input type="text" className="form-control">
+                      </div>
+                      <div className="form-group">
+                        <label>Address Line 2</label>
+                        <input type="text" className="form-control">
+                      </div>
+                      <div className="form-group">
+                        <label>State</label>
+                        <input type="text" className="form-control">
+                      </div>
+                    </div>
+                    <div className="col-md-6">
+                      <div className="form-group">
+                        <label>City</label>
+                        <input type="text" className="form-control">
+                      </div>
+                      <div className="form-group">
+                        <label>Country</label>
+                        <input type="text" className="form-control">
+                      </div>
+                      <div className="form-group">
+                        <label>Postal Code</label>
+                        <input type="text" className="form-control">
+                      </div>
+                    </div>
+                  </div>
+                  <div className="text-end">
+                    <button type="submit" className="btn btn-primary">Submit</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="row">
+          <div className="col-md-12">
+            <div className="card">
+              <div className="card-header">
+                <h4 className="card-title">Two Column Vertical Form</h4>
+              </div>
+              <div className="card-body">
+                <form action="#">
+                  <div className="row">
+                    <div className="col-md-6">
+                      <h4 className="card-title">Personal details</h4>
+                      <div className="form-group">
+                        <label>Name:</label>
+                        <input type="text" className="form-control">
+                      </div>
+                      <div className="form-group">
+                        <label>Password:</label>
+                        <input type="password" className="form-control">
+                      </div>
+                      <div className="form-group">
+                        <label>State:</label>
+                        <select className="select">
+                          <option>Select State</option>
+                          <option value="1">California</option>
+                          <option value="2">Texas</option>
+                          <option value="3">Florida</option>
+                        </select>
+                      </div>
+                      <div className="form-group">
+                        <label>Your Message:</label>
+                        <textarea rows="5" cols="5" className="form-control" placeholder="Enter message"></textarea>
+                      </div>
+                    </div>
+                    <div className="col-md-6">
+                      <h4 className="card-title">Personal details</h4>
+                      <div className="row">
+                        <div className="col-md-6">
+                          <div className="form-group">
+                            <label>First Name:</label>
+                            <input type="text" className="form-control">
+                          </div>
+                        </div>
+                        <div className="col-md-6">
+                          <div className="form-group">
+                            <label>Last Name:</label>
+                            <input type="text" className="form-control">
+                          </div>
+                        </div>
+                      </div>
+                      <div className="row">
+                        <div className="col-md-6">
+                          <div className="form-group">
+                            <label>Email:</label>
+                            <input type="text" className="form-control">
+                          </div>
+                        </div>
+                        <div className="col-md-6">
+                          <div className="form-group">
+                            <label>Phone:</label>
+                            <input type="text" className="form-control">
+                          </div>
+                        </div>
+                      </div>
+                      <div className="row">
+                        <div className="col-md-12">
+                          <div className="form-group">
+                            <label>Address line:</label>
+                            <input type="text" className="form-control">
+                          </div>
+                        </div>
+                      </div>
+                      <div className="row">
+                        <div className="col-md-6">
+                          <div className="form-group">
+                            <label>Country:</label>
+                            <select className="select">
+                              <option>Select Country</option>
+                              <option value="1">USA</option>
+                              <option value="2">France</option>
+                              <option value="3">India</option>
+                              <option value="4">Spain</option>
+                            </select>
+                          </div>
+                        </div>
+                        <div className="col-md-6">
+                          <div className="form-group">
+                            <label>State/Province:</label>
+                            <input type="text" className="form-control">
+                          </div>
+                        </div>
+                      </div>
+                      <div className="row">
+                        <div className="col-md-6">
+                          <div className="form-group">
+                            <label>ZIP code:</label>
+                            <input type="text" className="form-control">
+                          </div>
+                        </div>
+                        <div className="col-md-6">
+                          <div className="form-group">
+                            <label>City:</label>
+                            <input type="text" className="form-control">
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="text-end">
+                    <button type="submit" className="btn btn-primary">Submit</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+
+  <script src="assets/js/jquery-3.6.0.min.js"></script>
+
+  <script src="assets/js/bootstrap.bundle.min.js"></script>
+
+  <script src="assets/js/feather.min.js"></script>
+
+  <script src="assets/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+
+  <script src="assets/js/select2.min.js"></script>
+
+  <script src="assets/js/script.js"></script>
+</body>
+
+<!-- Mirrored from mentoring-html.dreamguystech.com/template-2/admin/form-vertical.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 31 Jul 2022 03:59:58 GMT -->
+
+</html>
