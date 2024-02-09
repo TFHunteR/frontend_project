@@ -26,6 +26,15 @@ export const GET_ANNOUNCEMENTS = gql`
   }
 `
 
+export const DELETE_ANNOUNCEMENT = gql`
+  mutation deleteAnnouncement($annId: ID!) {
+    deleteAnnouncement(annId: $annId) {
+      success
+      message
+    }
+  }
+`;
+
 export const GET_TEXT_MESSAGE = gql`
   query GET_TEXT_MESSAGE($id: ID!) {
     getTextMessage(id: $id) {

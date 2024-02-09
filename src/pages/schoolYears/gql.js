@@ -49,6 +49,15 @@ export const CREATE_SY = gql`
   }
 `
 
+export const DELETE_SY = gql`
+  mutation deleteSchoolYear($syId: ID!, $userId: ID!) {
+    deleteSchoolYear(syId: $syId, userId: $userId) {
+      success
+      message
+    }
+  }
+`;
+
 export const CHANGE_SY_STATUS_MUTATION = gql`
   mutation Mutation($id: ID!, $status: SchoolYearStatus!, $updatedBy: Int) {
     changeSchoolYearStatus(id: $id, status: $status, updatedBy: $updatedBy) {

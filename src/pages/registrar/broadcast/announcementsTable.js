@@ -1,16 +1,18 @@
 /* eslint-disable react/prop-types */
-import React, { useEffect, useMemo, useState } from 'react'
-import _ from 'lodash'
-import { Card, Col, Row } from 'react-bootstrap'
-import { CustomTable, LoadingSpinner } from '../../../components'
-import styledComponents from 'styled-components'
-import { useQuery } from '@apollo/client'
-import AnnouncementModal from './announcementModal'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { solid } from '@fortawesome/fontawesome-svg-core/import.macro'
-import { GET_ANNOUNCEMENTS, getUser } from './gql'
+import React, { useEffect, useMemo, useState, useContext } from 'react';
+import _ from 'lodash';
+import { Card, Col, Row, Button } from 'react-bootstrap'; // Import Button component
+import { CustomTable, LoadingSpinner } from '../../../components';
+import styled from 'styled-components'; // Import styled from 'styled-components'
+import { useQuery, useMutation } from '@apollo/client';
+import AnnouncementModal from './announcementModal';
+import DeleteAnnouncementModal from './deleteAnnouncementModal';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { solid } from '@fortawesome/fontawesome-svg-core/import.macro';
+import { GET_ANNOUNCEMENTS, DELETE_ANNOUNCEMENT, getUser } from './gql';
 
-const StyledRow = styledComponents(Row)`
+
+const StyledRow = styled(Row)` // Use styled directly
   table {
     font-size: 12px;
 
@@ -18,12 +20,50 @@ const StyledRow = styledComponents(Row)`
       font-size: 12px;
     }
   }
-`
+`;
+
+const RedButton = styled(Button)` // Define RedButton styled component
+  color: red;
+  text-decoration: none;
+  transition: color 0.2s;
+
+  &:hover {
+    color: darkred;
+    text-decoration: underline;
+  }
+`;
 
 export default function Index() {
+
   const [announcements, setAnnouncements] = useState([])
 
   const { data, loading } = useQuery(GET_ANNOUNCEMENTS)
+
+  const [showDeleteModal, setShowDeleteModal] = useState(false);
+  const [annToDelete, setAnnToDelete] = useState(null);
+  const [deleteAnn] = useMutation(DELETE_ANNOUNCEMENT);
+
+  const handleDelete = (annId) => {
+    setAnnToDelete(annId);
+    setShowDeleteModal(true);
+  };
+
+  const handleCloseDeleteModal = () => {
+    setShowDeleteModal(false);
+  };
+
+  const handleConfirmDelete = async () => {
+    try {
+      deleteAnn({ variables: { annId: annToDelete } });
+      const updatedAnnouncement = announcements.filter(announcements => announcements.id !== annToDelete);
+      setAnnouncements(updatedAnnouncement);
+      setShowDeleteModal(false);
+    } catch (error) {
+      console.error('Error deleting section:', error);
+      // Handle errors, such as displaying an error message to the user
+    }
+  };
+  
 
   useEffect(() => {
     const iRecords = _.has(data, 'getAnnouncements')
@@ -57,15 +97,21 @@ export default function Index() {
       dataKey: 'status'
     },
     {
-      title: '',
+      title: 'ACTION',
       dataKey: 'id',
       render: (id) => {
         return (
+        <>
           <AnnouncementModal id={id}>
             <FontAwesomeIcon icon={solid('edit')} />
-            {` `}
+            {' '}
             EDIT
           </AnnouncementModal>
+          {' '}
+          <RedButton variant='link' onClick={() => handleDelete(id)}><FontAwesomeIcon icon={solid('trash')} />
+            {' '}
+            Delete</RedButton>
+        </>
         )
       }
     }
@@ -73,6 +119,12 @@ export default function Index() {
 
   return (
     <>
+      <DeleteAnnouncementModal
+          show={showDeleteModal}
+          handleClose={handleCloseDeleteModal}
+          handleConfirmDelete={handleConfirmDelete}
+          handleDelete={handleDelete}
+        />
       <h3 className='pb-3'>Announcements</h3>
       <StyledRow>
         <Col>

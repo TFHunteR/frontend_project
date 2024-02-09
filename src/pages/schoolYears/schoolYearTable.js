@@ -13,9 +13,10 @@ import { CustomTable } from '../../components';
 import UsersContext from './schoolYear.context';
 import styledComponents from 'styled-components';
 import { useNavigate } from 'react-router-dom';
-import { GET_SCHOOL_YEARS } from './gql';
-import { useQuery } from '@apollo/client';
+import { GET_SCHOOL_YEARS, DELETE_SY } from './gql';
+import { useQuery, useMutation } from '@apollo/client';
 import CreateSchoolYearModal from './createSchoolYearModal'
+import DeleteConfirmationModal from './deleteSchoolYearModal';
 import ChangeStatus from './changeStatus'
 
 const StyledRow = styledComponents(Row)`
@@ -37,6 +38,31 @@ export default function Index() {
   const [schoolYears, setSchoolYears] = useState([]);
 
   const { data, loading } = useQuery(GET_SCHOOL_YEARS);
+
+  const [showDeleteModal, setShowDeleteModal] = useState(false);
+  const [SYToDelete, setSYToDelete] = useState(null);
+  const [deleteSY] = useMutation(DELETE_SY);
+
+  const handleDelete = (syId) => {
+    setSYToDelete(syId);
+    setShowDeleteModal(true);
+  };
+
+  const handleCloseDeleteModal = () => {
+    setShowDeleteModal(false);
+  };
+
+  const handleConfirmDelete = async () => {
+    try {
+      deleteSY({ variables: { syId: SYToDelete, userId } });
+      const updatedSY = schoolYears.filter(schoolYears => schoolYears.id !== SYToDelete);
+      setSchoolYears(updatedSY);
+      setShowDeleteModal(false);
+    } catch (error) {
+      console.error('Error deleting section:', error);
+      // Handle errors, such as displaying an error message to the user
+    }
+  };
 
   useEffect(() => {
     const sys = _.has(data, 'getSchoolYears') ? data.getSchoolYears : [];
@@ -86,6 +112,16 @@ export default function Index() {
         )
       },
     },
+    {
+      title: 'Actions',
+      dataKey: 'id',
+      render: (row) => {
+        const sectionId = row 
+        return (
+          <Button variant='danger' onClick={() => handleDelete(sectionId)}>Delete</Button>
+        );
+      },
+    },
   ]);
 
   const addUser = useCallback(() => {
@@ -106,6 +142,11 @@ export default function Index() {
                 columns={columns}
                 dataValues={schoolYears}
                 loading={loading}
+              />
+              <DeleteConfirmationModal
+                show={showDeleteModal}
+                handleClose={handleCloseDeleteModal}
+                handleConfirmDelete={handleConfirmDelete}
               />
             </Card.Body>
           </Card>

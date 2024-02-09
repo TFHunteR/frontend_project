@@ -47,6 +47,16 @@ export const GET_SECTIONS = gql`
     }
 `;
 
+export const DELETE_SECTION = gql`
+  mutation deleteSection($sectionId: ID!, $userId: ID!) {
+    deleteSection(sectionId: $sectionId, userId: $userId) {
+      success
+      message
+    }
+  }
+`;
+
+
 
 
 export const ADD_SECTION_ADVISER = gql`
